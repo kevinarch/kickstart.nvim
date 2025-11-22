@@ -173,6 +173,10 @@ vim.o.confirm = true
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+-- Close the current buffer
+vim.keymap.set('n', '[c', ':bd<CR>', { noremap = true, silent = true, desc = 'Close buffer' })
+vim.keymap.set('n', ']c', ':bd<CR>', { noremap = true, silent = true, desc = 'Close buffer' })
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
