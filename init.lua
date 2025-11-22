@@ -174,8 +174,8 @@ vim.o.confirm = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Close the current buffer
-vim.keymap.set('n', '[c', ':bd<CR>', { noremap = true, silent = true, desc = 'Close buffer' })
-vim.keymap.set('n', ']c', ':bd<CR>', { noremap = true, silent = true, desc = 'Close buffer' })
+vim.keymap.set('n', '[c', ':BufferClose<CR>', { noremap = true, silent = true, desc = 'Close buffer' })
+vim.keymap.set('n', ']c', ':BufferClose<CR>', { noremap = true, silent = true, desc = 'Close buffer' })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>xq', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
@@ -388,6 +388,15 @@ require('lazy').setup({
 
       -- Useful for getting pretty icons, but requires a Nerd Font.
       { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
+
+      -- Git file history
+      {
+        'isak102/telescope-git-file-history.nvim',
+        dependencies = {
+          'nvim-lua/plenary.nvim',
+          'tpope/vim-fugitive',
+        },
+      },
     },
     config = function()
       -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -431,6 +440,7 @@ require('lazy').setup({
       -- Enable Telescope extensions if they are installed
       pcall(require('telescope').load_extension, 'fzf')
       pcall(require('telescope').load_extension, 'ui-select')
+      pcall(require('telescope').load_extension, 'git_file_history')
 
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
@@ -467,6 +477,8 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>fn', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
       end, { desc = '[S]earch [N]eovim files' })
+
+      vim.keymap.set('n', '<leader>gt', ':Telescope git_file_history<CR>', { desc = '[g]it [t]imeline' })
     end,
   },
 
