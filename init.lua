@@ -173,6 +173,9 @@ vim.o.confirm = true
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+-- Paste without yank current selected word
+vim.keymap.set('v', 'p', 'P')
+
 -- Close the current buffer
 vim.keymap.set('n', '[c', ':BufferClose<CR>', { noremap = true, silent = true, desc = 'Close buffer' })
 vim.keymap.set('n', ']c', ':BufferClose<CR>', { noremap = true, silent = true, desc = 'Close buffer' })
