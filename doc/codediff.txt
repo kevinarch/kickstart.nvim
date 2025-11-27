@@ -1,0 +1,50 @@
+================================================================================
+INTRODUCTION                                                  *codediff*
+
+Codediff Neovim
+
+                                                            *file-explorer-mode*
+
+" Show git status in explorer (default)
+:CodeDiff
+
+" Show changes for specific revision in explorer
+:CodeDiff HEAD~5
+
+" Compare against a branch
+:CodeDiff main
+
+" Compare against a specific commit
+:CodeDiff abc123
+
+" Compare two revisions (e.g. HEAD vs main)
+:CodeDiff main HEAD
+
+                                                                 *git-diff-mode*
+
+" Compare with last commit
+:CodeDiff file HEAD
+
+" Compare with previous commit
+:CodeDiff file HEAD~1
+
+" Compare with specific commit
+:CodeDiff file abc123
+
+" Compare with branch
+:CodeDiff file main
+
+" Compare with tag
+:CodeDiff file v1.0.0
+
+" Compare two revisions for current file
+:CodeDiff file main HEAD
+
+
+
+                                                                *file-compare*
+
+:CodeDiff file file_a.txt file_b.txt
+
+
+ vim:tw=78:ts=8:ft=help:norl:
