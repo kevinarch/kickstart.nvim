@@ -212,6 +212,20 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- Path Utils
+
+vim.keymap.set('n', '<leader>cp', function()
+  local fullpath = vim.fn.expand '%:p'
+  vim.fn.setreg('+', fullpath)
+  print('Copied ' .. fullpath)
+end, { desc = 'Copy [p]ath' })
+
+vim.keymap.set('n', '<leader>cr', function()
+  local relpath = vim.fn.expand '%:.'
+  vim.fn.setreg('+', relpath)
+  print('Copied (relative): ' .. relpath)
+end, { desc = 'Copy [r]elative path' })
+
 -- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
 -- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
 -- vim.keymap.set("n", "<C-S-l>", "<C-w>L", { desc = "Move window to the right" })
@@ -360,6 +374,7 @@ require('lazy').setup({
         { '<leader>f', group = '👀 [f]ind' },
         { '<leader>t', group = '[T]oggle' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+        { '<leader>c', group = '[c]opy', mode = { 'n', 'v' } },
       },
     },
   },
