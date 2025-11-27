@@ -3,6 +3,14 @@ INTRODUCTION                                                  *codediff*
 
 Codediff Neovim
 
+                                                                      *key_map*
+
+'q'		=>	Close diff tab
+'<leader>b'	=> 	Toggle explorer visibility
+']b'		=>	Next hunt
+'[b'		=>	Previous hunt
+'R'		=>	Refresh status
+
                                                             *file-explorer-mode*
 
 " Show git status in explorer (default)
@@ -42,7 +50,7 @@ Codediff Neovim
 
 
 
-                                                                *file-compare*
+                                                                 *file-compare*
 
 :CodeDiff file file_a.txt file_b.txt
 
