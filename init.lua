@@ -183,7 +183,7 @@ vim.keymap.set('n', '[c', ':BufferClose<CR>', { noremap = true, silent = true, d
 vim.keymap.set('n', ']c', ':BufferClose<CR>', { noremap = true, silent = true, desc = 'Close buffer' })
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '<leader>xq', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+-- vim.keymap.set('n', '<leader>xq', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 -- Commenting
 vim.keymap.set('n', '<leader>/', 'gcc', { silent = true, remap = true, desc = 'Toggle comment' })
@@ -373,8 +373,8 @@ require('lazy').setup({
       spec = {
         { '<leader>f', group = '👀 [f]ind' },
         { '<leader>t', group = '[T]oggle' },
-        { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
         { '<leader>c', group = '[c]opy', mode = { 'n', 'v' } },
+        { '<leader>g', group = '[g]it', mode = { 'n', 'v' } },
       },
     },
   },
