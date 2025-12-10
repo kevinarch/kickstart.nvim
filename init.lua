@@ -128,6 +128,13 @@ end)
 -- Enable break indent
 vim.o.breakindent = true
 
+-- Indent
+-- vim.o.tabstop = 2
+vim.o.softtabstop = 2
+vim.o.shiftwidth = 2
+vim.o.smartindent = true
+vim.o.autoindent = true
+
 -- Save undo history
 vim.o.undofile = true
 
@@ -1075,6 +1082,7 @@ require('lazy').setup({
     -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
     icons = vim.g.have_nerd_font and {} or {
       cmd = '⌘',
+
       config = '🛠',
       event = '📅',
       ft = '📂',
