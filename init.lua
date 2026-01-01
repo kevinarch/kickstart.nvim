@@ -388,6 +388,7 @@ require('lazy').setup({
         { '<leader>c', group = '[c]opy', mode = { 'n', 'v' } },
         { '<leader>g', group = '[g]it', mode = { 'n', 'v' } },
         { '<leader>e', group = '[e]xplorer', mode = { 'n', 'v' } },
+        { '<leader>n', group = 'Mi[n]imap' },
       },
     },
   },
