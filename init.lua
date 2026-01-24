@@ -1029,7 +1029,7 @@ require('lazy').setup({
         'dart',
         'kotlin',
         'json',
-        'swift',
+        -- 'swift',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
